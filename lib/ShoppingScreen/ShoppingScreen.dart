@@ -56,7 +56,9 @@ class ShoppingScreen extends StatelessWidget {
         width: double.infinity,
         child: GridView.builder(
           itemCount: myProudcts.length,
-          itemBuilder: itemBuilder,
+          itemBuilder: (cx,i)=>Image(
+            image: NetworkImage(myProudcts[i].imageUrl??""),
+          ),
 
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             mainAxisSpacing: 10,
