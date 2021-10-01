@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/Components/itemShow.dart';
 import 'package:untitled/Models/Product.dart';
 
 class ShoppingScreen extends StatelessWidget {
@@ -47,33 +48,7 @@ class ShoppingScreen extends StatelessWidget {
           width: double.infinity,
           child: GridView.builder(
             itemCount: myProudcts.length,
-            itemBuilder: (cx, i) => ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: GridTile(
-
-                child: Image(
-                  image: NetworkImage(myProudcts[i].imageUrl ?? ""),
-                  fit: BoxFit.fill,
-                ),
-                footer: GridTileBar(
-                  backgroundColor: Colors.black45,
-                  leading: Icon(Icons.favorite,
-                  color: Colors.orange,
-                  ),
-                  title: Text(myProudcts[i].title ?? "",
-                  style: TextStyle(
-                    color: Colors.orange,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold
-                  ),
-                    textAlign: TextAlign.center,
-                  ),
-                  trailing: Icon(Icons.add_shopping_cart,
-                  color: Colors.orange,
-                  ) ,
-                ),
-              ),
-            ),
+            itemBuilder: (cx, i) => itemShow(myProudcts[i]),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 mainAxisSpacing: 10,
                 crossAxisSpacing: 10,
