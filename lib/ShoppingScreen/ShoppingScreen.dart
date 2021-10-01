@@ -2,18 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:untitled/Models/Product.dart';
 
 class ShoppingScreen extends StatelessWidget {
-  
-
   List<Product> myProudcts = [
-
-
     Product(
       id: 'p1',
       title: 'Red Shirt',
       description: 'A red shirt - it is pretty red!',
       price: 29.99,
       imageUrl:
-      'https://cdn.pixabay.com/photo/2016/10/02/22/17/red-t-shirt-1710578_1280.jpg',
+          'https://cdn.pixabay.com/photo/2016/10/02/22/17/red-t-shirt-1710578_1280.jpg',
     ),
     Product(
       id: 'p2',
@@ -21,7 +17,7 @@ class ShoppingScreen extends StatelessWidget {
       description: 'A nice pair of trousers.',
       price: 59.99,
       imageUrl:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Trousers%2C_dress_%28AM_1960.022-8%29.jpg/512px-Trousers%2C_dress_%28AM_1960.022-8%29.jpg',
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Trousers%2C_dress_%28AM_1960.022-8%29.jpg/512px-Trousers%2C_dress_%28AM_1960.022-8%29.jpg',
     ),
     Product(
       id: 'p3',
@@ -29,7 +25,7 @@ class ShoppingScreen extends StatelessWidget {
       description: 'Warm and cozy - exactly what you need for the winter.',
       price: 19.99,
       imageUrl:
-      'https://live.staticflickr.com/4043/4438260868_cc79b3369d_z.jpg',
+          'https://live.staticflickr.com/4043/4438260868_cc79b3369d_z.jpg',
     ),
     Product(
       id: 'p4',
@@ -37,15 +33,10 @@ class ShoppingScreen extends StatelessWidget {
       description: 'Prepare any meal you want.',
       price: 49.99,
       imageUrl:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Cast-Iron-Pan.jpg/1024px-Cast-Iron-Pan.jpg',
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Cast-Iron-Pan.jpg/1024px-Cast-Iron-Pan.jpg',
     ),
-    
-  ] ;
-  
-  
-  
-  
-  
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,20 +44,42 @@ class ShoppingScreen extends StatelessWidget {
         title: Text("my shopping Screen"),
       ),
       body: Container(
-        width: double.infinity,
-        child: GridView.builder(
-          itemCount: myProudcts.length,
-          itemBuilder: (cx,i)=>Image(
-            image: NetworkImage(myProudcts[i].imageUrl??""),
-          ),
+          width: double.infinity,
+          child: GridView.builder(
+            itemCount: myProudcts.length,
+            itemBuilder: (cx, i) => ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: GridTile(
 
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            mainAxisSpacing: 10,
-            crossAxisSpacing: 10,
-            childAspectRatio: 3/2,
-            crossAxisCount: 2
-          ) ,)
-      ),
+                child: Image(
+                  image: NetworkImage(myProudcts[i].imageUrl ?? ""),
+                  fit: BoxFit.fill,
+                ),
+                footer: GridTileBar(
+                  backgroundColor: Colors.black45,
+                  leading: Icon(Icons.favorite,
+                  color: Colors.orange,
+                  ),
+                  title: Text(myProudcts[i].title ?? "",
+                  style: TextStyle(
+                    color: Colors.orange,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold
+                  ),
+                    textAlign: TextAlign.center,
+                  ),
+                  trailing: Icon(Icons.add_shopping_cart,
+                  color: Colors.orange,
+                  ) ,
+                ),
+              ),
+            ),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                mainAxisSpacing: 10,
+                crossAxisSpacing: 10,
+                childAspectRatio: 3 / 2,
+                crossAxisCount: 2),
+          )),
     );
   }
 }
