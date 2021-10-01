@@ -54,11 +54,16 @@ class ShoppingScreen extends StatelessWidget {
       ),
       body: Container(
         width: double.infinity,
-        child: Column(
-          children: [
-            Text("my Product")
-          ],
-        ),
+        child: GridView.builder(
+          itemCount: myProudcts.length,
+          itemBuilder: itemBuilder,
+
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            mainAxisSpacing: 10,
+            crossAxisSpacing: 10,
+            childAspectRatio: 3/2,
+            crossAxisCount: 2
+          ) ,)
       ),
     );
   }
