@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'ShoppingScreen/ShoppingScreen.dart';
+import 'Screens/shoppingScreen.dart';
 
-void main(){
+void main() {
   runApp(
     MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: ShoppingScreen(),
+      home: ShoppingScreen() ,
     )
   );
 }
