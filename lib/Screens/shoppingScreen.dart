@@ -48,17 +48,20 @@ List<Product> myProducts = [
         title: Text("my firstApp"),
       ),
 
-      body: Container(
-        width: double.infinity,
-        child: Column(
-          children: [
-            Text("my data"),
-            Image(
-                image: NetworkImage(myProducts[2].imageUrl??"")
-            )
-          ],
-        ),
+      body:  GridView.builder(
+        itemCount: myProducts.length,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        childAspectRatio: 3/2,
+        mainAxisSpacing: 10,
+        crossAxisSpacing: 10
       ),
+          itemBuilder: (cx ,i )=>Image(
+            image: NetworkImage(myProducts[i].imageUrl??""),
+          ),
+      )
+
+
     );
   }
 }
