@@ -56,8 +56,26 @@ List<Product> myProducts = [
         mainAxisSpacing: 10,
         crossAxisSpacing: 10
       ),
-          itemBuilder: (cx ,i )=>Image(
-            image: NetworkImage(myProducts[i].imageUrl??""),
+          itemBuilder: (cx ,i )=>ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: GridTile(
+              child: Image(
+                image: NetworkImage(myProducts[i].imageUrl??""),
+                fit: BoxFit.fill,
+              ),
+              footer: GridTileBar(
+                backgroundColor: Colors.black45 ,
+                title: Text(myProducts[i].title??"",
+                style: TextStyle(
+                  color: Colors.orange,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 17
+                ) ,
+                ),
+                leading: Icon(Icons.favorite,color: Colors.orange,),
+                trailing: Icon(Icons.shopping_cart_rounded,color: Colors.orange,),
+              ),
+            ),
           ),
       )
 
