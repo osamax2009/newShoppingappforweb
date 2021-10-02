@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/Components/ItemShow.dart';
+import 'package:untitled/Screens/DetailsScreen.dart';
 import '/Models/Product.dart';
 
 class ShoppingScreen extends StatelessWidget {
@@ -56,30 +58,19 @@ List<Product> myProducts = [
         mainAxisSpacing: 10,
         crossAxisSpacing: 10
       ),
-          itemBuilder: (cx ,i )=>ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: GridTile(
-              child: Image(
-                image: NetworkImage(myProducts[i].imageUrl??""),
-                fit: BoxFit.fill,
-              ),
-              footer: GridTileBar(
-                backgroundColor: Colors.black45 ,
-                title: Text(myProducts[i].title??"",
-                style: TextStyle(
-                  color: Colors.orange,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 17
-                ) ,
-                ),
-                leading: Icon(Icons.favorite,color: Colors.orange,),
-                trailing: Icon(Icons.shopping_cart_rounded,color: Colors.orange,),
-              ),
-            ),
-          ),
+          itemBuilder: (cx ,i )=>
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: 
+                  (context)=>DetailsScreen(myProducts[i])
+                       ),
+                  );
+                  print(myProducts[i].title);
+                },
+                  child: ItemShow(myProducts[i]),
+              )
       )
-
-
+        
     );
   }
 }
