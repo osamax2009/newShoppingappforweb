@@ -1,11 +1,27 @@
 import 'package:flutter/material.dart';
 
-import 'Screens/shoppingScreen.dart';
+import 'Theme.dart';
 
-void main() {
+
+void main(){
   runApp(
     MaterialApp(
-      home: ShoppingScreen() ,
-    )
+      theme: themeData() ,
+
+      home: Scaffold(
+      appBar:AppBar(
+              leading: Icon(Icons.settings),
+              actions: [
+                Icon(Icons.settings),
+                Icon(Icons.settings),
+                Icon(Icons.settings),
+              ],
+              title: Center(
+                  child: Text(" my first app "),
+              ),
+      ) ,
+
+      ),
+    ),
   );
 }
