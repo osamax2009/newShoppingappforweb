@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/views/SplashScreen.dart';
 
 import 'Theme.dart';
 
@@ -8,20 +9,7 @@ void main(){
     MaterialApp(
       theme: themeData() ,
 
-      home: Scaffold(
-      appBar:AppBar(
-              leading: Icon(Icons.settings),
-              actions: [
-                Icon(Icons.settings),
-                Icon(Icons.settings),
-                Icon(Icons.settings),
-              ],
-              title: Center(
-                  child: Text(" my first app "),
-              ),
-      ) ,
-
-      ),
-    ),
+      home: SplashScreen()
+  ),
   );
 }
