@@ -12,14 +12,17 @@ ThemeData themeData() {
         ),
       ),
     textTheme: TextTheme(
+
       headline1: TextStyle(
         fontSize: 35,
         color: Colors.red,
       ),
         headline2: TextStyle(
           fontSize: 20,
-          color: Colors.red[77],
-        )
+          color: Colors.redAccent,
+
+        ),
+
 
 
     )

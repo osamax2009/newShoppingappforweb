@@ -9,6 +9,7 @@ void main(){
     MaterialApp(
       theme: themeData() ,
 
+
       home: SplashScreen()
   ),
   );
