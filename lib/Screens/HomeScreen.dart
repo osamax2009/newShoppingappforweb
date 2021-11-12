@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/Component/ShowItem.dart';
 import 'package:untitled/Models/Product.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -49,27 +50,7 @@ class HomeScreen extends StatelessWidget {
         ),
         body: GridView.builder(
           itemCount: myProducts.length,
-          itemBuilder: (cx,i)=> ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-            child: GridTile(
-              child: Image(
-              image: NetworkImage(myProducts[i].imageUrl!),
-                fit: BoxFit.fill,
-        ),
-              footer: GridTileBar(
-                backgroundColor: Colors.black45,
-                title: Text(myProducts[i].title!,
-                style: TextStyle(
-                  color: Colors.orange,
-                  fontWeight: FontWeight.bold
-                ),
-                  textAlign: TextAlign.center
-                ),
-                leading: Icon(Icons.favorite, color: Colors.orange,),
-                trailing: Icon(Icons.shopping_cart, color: Colors.orange,),
-              ),
-            ),
-          ),
+          itemBuilder: (cx,i)=> ShowItem(myProducts[i]),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             crossAxisSpacing: 10,
@@ -82,6 +63,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-
-
