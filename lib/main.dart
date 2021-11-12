@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/views/SplashScreen.dart';
+import 'package:untitled/Screens/HomeScreen.dart';
+import 'package:untitled/Screens/SplashScreen.dart';
 
-import 'Theme.dart';
-
-
-void main(){
-  runApp(
-    MaterialApp(
-      theme: themeData() ,
+void main() {
+  runApp(MyApp());
+}
 
 
-      home: SplashScreen()
-  ),
-  );
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: HomeScreen()
+    );
+  }
 }
