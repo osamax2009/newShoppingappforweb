@@ -49,9 +49,27 @@ class HomeScreen extends StatelessWidget {
         ),
         body: GridView.builder(
           itemCount: myProducts.length,
-          itemBuilder: (cx,i)=> Image(
-          image: NetworkImage(myProducts[i].imageUrl!),
+          itemBuilder: (cx,i)=> ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+            child: GridTile(
+              child: Image(
+              image: NetworkImage(myProducts[i].imageUrl!),
+                fit: BoxFit.fill,
         ),
+              footer: GridTileBar(
+                backgroundColor: Colors.black45,
+                title: Text(myProducts[i].title!,
+                style: TextStyle(
+                  color: Colors.orange,
+                  fontWeight: FontWeight.bold
+                ),
+                  textAlign: TextAlign.center
+                ),
+                leading: Icon(Icons.favorite, color: Colors.orange,),
+                trailing: Icon(Icons.shopping_cart, color: Colors.orange,),
+              ),
+            ),
+          ),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             crossAxisSpacing: 10,
