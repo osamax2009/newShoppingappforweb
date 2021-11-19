@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:untitled/Screens/HomeScreen.dart';
 import 'package:untitled/Screens/SplashScreen.dart';
 
+import 'Theme.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -14,7 +16,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomeScreen()
+
+        debugShowCheckedModeBanner: false,
+        theme: myThemeData(),
+        home: HomeScreen()
     );
   }
+
 }

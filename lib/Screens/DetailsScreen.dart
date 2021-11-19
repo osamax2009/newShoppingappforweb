@@ -75,7 +75,7 @@ class DetailsScreen extends StatelessWidget {
                 child: Row(
                   children: [
                     ...myProducts
-                        .map((item) => Container(
+                        .map((item) => item.id == product.id ? Container(): Container(
                       margin: EdgeInsets.all(10),
                                 height: 100,
                               child: Image.network(item.imageUrl!,
