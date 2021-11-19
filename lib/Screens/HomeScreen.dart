@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/Component/ShowItem.dart';
 import 'package:untitled/Models/Product.dart';
+import 'package:untitled/Screens/DetailsScreen.dart';
 
 class HomeScreen extends StatelessWidget {
 
@@ -51,7 +52,17 @@ class HomeScreen extends StatelessWidget {
         body: GridView.builder(
           padding: EdgeInsets.symmetric(horizontal: 10),
           itemCount: myProducts.length,
-          itemBuilder: (cx,i)=> ShowItem(myProducts[i]),
+          itemBuilder: (cx,i)=> GestureDetector(
+            onTap: (){
+                Navigator.push(context,
+                    MaterialPageRoute(
+                        builder: (context)=>DetailsScreen()
+                    )
+                );
+
+            },
+              child: ShowItem(myProducts[i])
+          ),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             crossAxisSpacing: 10,
