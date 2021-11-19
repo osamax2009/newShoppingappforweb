@@ -49,6 +49,7 @@ class HomeScreen extends StatelessWidget {
 
         ),
         body: GridView.builder(
+          padding: EdgeInsets.symmetric(horizontal: 10),
           itemCount: myProducts.length,
           itemBuilder: (cx,i)=> ShowItem(myProducts[i]),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
