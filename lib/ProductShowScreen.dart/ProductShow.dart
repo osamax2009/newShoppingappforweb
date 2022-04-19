@@ -4,6 +4,11 @@ import 'package:flutter/material.dart';
 
 class ProductShow extends StatelessWidget {
 
+  static String routeName = "/home" ;
+
+
+
+
   Future<void> deleteProduct (uid) async{
     CollectionReference  Products =  FirebaseFirestore.instance.collection("Products");
 
