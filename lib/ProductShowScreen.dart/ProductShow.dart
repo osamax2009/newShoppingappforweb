@@ -26,7 +26,8 @@ class ProductShow extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Product Show Screen"),
+        title: Text("Product Show Screen",
+        ),
       ),
       body: StreamBuilder<QuerySnapshot>(
         stream: Products,
@@ -57,7 +58,9 @@ class ProductShow extends StatelessWidget {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
-                              Text(data["title"] ?? " no title"),
+                              Text(data["title"] ?? " no title" ,
+                              style: Theme.of(context).textTheme.headline6
+                              ),
 
                               Container(
                                 width: 100,

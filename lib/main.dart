@@ -1,5 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled/ProductShowScreen.dart/ProductShow.dart';
+import 'package:untitled/theme.dart';
 
 import 'AddProducts.dart';
 
@@ -18,9 +20,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home:AddProducts() ,
+      debugShowCheckedModeBanner: false,
+      home: ProductShow(),
+      title: "ShoppingApp",
+      theme: theme(),
     );
   }
 }
-
-

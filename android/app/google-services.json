@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "821459292826",
+    "firebase_url": "https://evve-b9411-default-rtdb.firebaseio.com",
+    "project_id": "evve-b9411",
+    "storage_bucket": "evve-b9411.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:821459292826:android:a7d7c10761541e0aedc523",
+        "android_client_info": {
+          "package_name": "com.example.untitled"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "821459292826-vrmb78inj3v47v5cg74btd37gkth9pdr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrJEDU0SZU9AMXv0xrYjzQVIdpZsNB4Rg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "821459292826-vrmb78inj3v47v5cg74btd37gkth9pdr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:821459292826:android:690778be532dc5fbedc523",
+        "android_client_info": {
+          "package_name": "com.shallal.osama.flutter_app_newstatvsful"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "821459292826-vrmb78inj3v47v5cg74btd37gkth9pdr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrJEDU0SZU9AMXv0xrYjzQVIdpZsNB4Rg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "821459292826-vrmb78inj3v47v5cg74btd37gkth9pdr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,32 @@
+
+{
+    "appname":"AzaStore",
+    "welcome": "Welcome",
+    "language": "Language",
+    "Animals & Pet Supplies": "Animals & Pet Supplies",
+"Apparel & Accessories":"Apparel & Accessories",
+"Arts & Entertainment":"Arts & Entertainment",
+"Baby & Toddler":"Baby & Toddler",
+"Business & Industrial":"Business & Industrial",
+"Cameras & Optics":"Cameras & Optics",
+"Electronics":"Electronics",
+"Food, Beverages & Tobacco":"`    `Food, Beverages & Tobacco",
+"Furniture":"Furniture",
+"Hardware":"Hardware",
+"Health & Beauty":"Health & Beauty",
+"Home & Garden":"Home & Garden",
+"Luggage & Bags":"Luggage & Bags",
+"Mature":"Mature",
+"Media":"Media",
+"Office Supplies":"Office Supplies",
+"Religious & Ceremonial":"Religious & Ceremonial",
+"Software": "Software",
+"Sporting Goods":"Toys & Games",
+"Toys & Games":"Toys & Games",
+"Vehicles & Parts":"Vehicles & Parts",
+  "Vehicles & Parts":"Vehicles & Parts",
+  "My Account":"My Account"
+
+
+
+  }
