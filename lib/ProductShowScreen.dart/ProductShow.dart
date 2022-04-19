@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class ProductShow extends StatelessWidget {
 
-  static String routeName = "/home" ;
+  static String routeName = "home" ;
 
 
 
