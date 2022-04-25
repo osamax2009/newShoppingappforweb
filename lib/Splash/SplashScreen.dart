@@ -73,6 +73,7 @@ class _SplashScreenState extends State<SplashScreen> {
                           )),
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: List.generate(
                       listofSplash.length
                       , (index) => buildContainer(index)
