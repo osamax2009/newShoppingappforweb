@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/ProductShowScreen.dart/ProductShow.dart';
 
 class SplashScreen extends StatefulWidget {
   SplashScreen({Key? key}) : super(key: key);
@@ -30,74 +31,87 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text("SplashScreen"),
-        ),
-        body: Container(
-            width: double.infinity,
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(13.0),
-                  child: Text(
-                    "MyShpping \n App",
-                    style: TextStyle(fontSize: 25, color: Colors.orange),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                Expanded(
-                  child: PageView.builder(
-                    onPageChanged: (value){
-                      setState(() {
-                        currentPage = value;
-                      });
-                    },
-                      itemCount: listofSplash.length,
-                      itemBuilder: (cx, index) => Column(
-                            children: [
-                              Text(
-                                listofSplash[index]["text"]!,
-                                textAlign: TextAlign.center,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(20.0),
-                                child: Image.asset(
-                                  listofSplash[index]["image"]!,
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.3,
-                                  width: MediaQuery.of(context).size.width * 0.8,
-                                ),
-                              ),
-                            ],
-                          )),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(
-                      listofSplash.length
-                      , (index) => buildContainer(index)
-                  ),
-                ),
-
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+      child: Stack(
+        children: [
+          Container(
+            child: Scaffold(
+              appBar: AppBar(
+                title: Text("SplashScreen"),
+              ),
+              body: Container(
                   width: double.infinity,
-                  height: 50,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15)),
-                  child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          primary: Colors.orange),
-                      onPressed: () {},
-                      child: Text("Continue...",
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                          ))),
-                )
-              ],
-            )),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(13.0),
+                        child: Text(
+                          "MyShpping \n App",
+                          style: TextStyle(fontSize: 25, color: Colors.orange),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      Expanded(
+                        child: PageView.builder(
+                          onPageChanged: (value){
+                            setState(() {
+                              currentPage = value;
+                            });
+                          },
+                            itemCount: listofSplash.length,
+                            itemBuilder: (cx, index) => Column(
+                                  children: [
+                                    Text(
+                                      listofSplash[index]["text"]!,
+                                      textAlign: TextAlign.center,
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(20.0),
+                                      child: Image.asset(
+                                        listofSplash[index]["image"]!,
+                                        height:
+                                            MediaQuery.of(context).size.height * 0.3,
+                                        width: MediaQuery.of(context).size.width * 0.8,
+                                      ),
+                                    ),
+                                  ],
+                                )),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: List.generate(
+                            listofSplash.length
+                            , (index) => buildContainer(index)
+                        ),
+                      ),
+
+                      Container(
+                        margin: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                        width: double.infinity,
+                        height: 50,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15)),
+                        child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                primary: Colors.orange),
+                            onPressed: () {
+                              Navigator.pushNamed(context, ProductShow.routeName);
+
+                            },
+                            child: Text("Continue...",
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.white,
+                                ))),
+                      )
+                    ],
+                  )),
+            ),
+          ),
+          AnimatedContainer(
+            duration: Duration(milliseconds: 200),
+            color: Colors.black,
+          )
+        ],
       ),
     );
   }
@@ -105,11 +119,14 @@ class _SplashScreenState extends State<SplashScreen> {
   AnimatedContainer  buildContainer(index) {
 
     return AnimatedContainer(
+      margin: EdgeInsets.only(
+        right: 8
+      ),
       duration: Duration(milliseconds: 100),
       height: 6,
       width: currentPage == index ?  20 : 6,
       decoration: BoxDecoration(
-          color: Colors.orange
+          color:currentPage == index ?  Colors.orange : Colors.white
       ),
     );
   }
