@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   SplashScreen({Key? key}) : super(key: key);
   static String routeName = "splash";
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  int currentPage = 0;
 
   var listofSplash = [
     {
@@ -41,6 +48,11 @@ class SplashScreen extends StatelessWidget {
                 ),
                 Expanded(
                   child: PageView.builder(
+                    onPageChanged: (value){
+                      setState(() {
+                        currentPage = value;
+                      });
+                    },
                       itemCount: listofSplash.length,
                       itemBuilder: (cx, index) => Column(
                             children: [
@@ -57,35 +69,52 @@ class SplashScreen extends StatelessWidget {
                                   width: MediaQuery.of(context).size.width * 0.8,
                                 ),
                               ),
-                               Spacer(),
-                              Container(
-                                margin: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-                                width: double.infinity,
-                                height: 50,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(15)),
-                                child: ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                        primary: Colors.orange),
-                                    onPressed: () {},
-                                    child: Text("Continue...",
-                                        style: TextStyle(
-                                          fontSize: 18,
-                                          color: Colors.white,
-                                        ))),
-                              )
                             ],
                           )),
                 ),
+                Row(
+                  children: List.generate(
+                      listofSplash.length
+                      , (index) => buildContainer(index)
+                  ),
+                ),
+
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                  width: double.infinity,
+                  height: 50,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15)),
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.orange),
+                      onPressed: () {},
+                      child: Text("Continue...",
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.white,
+                          ))),
+                )
               ],
             )),
       ),
     );
   }
+
+  AnimatedContainer  buildContainer(index) {
+
+    return AnimatedContainer(
+      duration: Duration(milliseconds: 100),
+      height: 6,
+      width: currentPage == index ?  20 : 6,
+      decoration: BoxDecoration(
+          color: Colors.orange
+      ),
+    );
+  }
+
+
+
 }
 
 
-Container buildContainer() {
-
-  re
-}
